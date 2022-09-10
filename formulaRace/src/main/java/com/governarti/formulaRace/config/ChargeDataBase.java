@@ -1,13 +1,7 @@
 package com.governarti.formulaRace.config;
 
-import com.governarti.formulaRace.entities.Circuit;
-import com.governarti.formulaRace.entities.Constructor;
-import com.governarti.formulaRace.entities.ConstructorResult;
-import com.governarti.formulaRace.entities.ConstructorStanding;
-import com.governarti.formulaRace.repositories.CircuitRepository;
-import com.governarti.formulaRace.repositories.ConstructorRepository;
-import com.governarti.formulaRace.repositories.ConstructorResultRepository;
-import com.governarti.formulaRace.repositories.ConstructorStandingRepository;
+import com.governarti.formulaRace.entities.*;
+import com.governarti.formulaRace.repositories.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -24,22 +18,33 @@ public class ChargeDataBase {
         private List<ConstructorResult> constructorResults = CsvHelper.csvToConstructorResult();
         private List<ConstructorStanding> constructorStandings = CsvHelper.csvToConstructorStanding();
         private List<Constructor> constructors = CsvHelper.csvToConstructor();
+        private List<DriverStanding> driverStandings = CsvHelper.csvToDriverStanding();
+        private List<Driver> drivers = CsvHelper.csvToDriver();
 
     @Bean
     CommandLineRunner initDataBase(
             CircuitRepository circuitRepository,
             ConstructorResultRepository constructorResultRepository,
             ConstructorStandingRepository constructorStandingRepository,
-            ConstructorRepository constructorRepository
+            ConstructorRepository constructorRepository,
+            DriverStandingRepository driverStandingRepository,
+            DriverRepository driverRepository
             ){
 
         return args -> {
-            log.info("Carregando base de dados...");
-            circuitRepository.saveAll(circuits);
-            constructorResultRepository.saveAll(constructorResults);
-            constructorStandingRepository.saveAll(constructorStandings);
-            constructorRepository.saveAll(constructors);
-            log.info("Base carregada");
+            try{
+                log.info("Carregando base de dados...");
+                circuitRepository.saveAll(circuits);
+                constructorResultRepository.saveAll(constructorResults);
+                constructorStandingRepository.saveAll(constructorStandings);
+                constructorRepository.saveAll(constructors);
+                driverStandingRepository.saveAll(driverStandings);
+                driverRepository.saveAll(drivers);
+                log.info("Base carregada");
+            } catch (Exception e){
+                throw new Exception("Ocorreu um erro ao carregar a base" + e.getMessage());
+            }
+
         };
     }
 }

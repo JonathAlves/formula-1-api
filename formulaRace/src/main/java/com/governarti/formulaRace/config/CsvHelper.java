@@ -114,7 +114,7 @@ public class CsvHelper {
         }
     }
 
-    public static List<DriverStanding> csvToDriveStanding(){
+    public static List<DriverStanding> csvToDriverStanding(){
         try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/driver_standings.csv"));
             CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
             List<DriverStanding> driverStandings = new ArrayList<>();
@@ -134,6 +134,32 @@ public class CsvHelper {
                 driverStandings.add(driverStanding);
             }
             return driverStandings;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public static List<Driver> csvToDriver(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/drivers.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<Driver> drivers = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                Driver driver = new Driver(
+                        Integer.parseInt(csvRecord.get("driverId")),
+                        csvRecord.get("driverRef"),
+                        csvRecord.get("number"),
+                        csvRecord.get("code"),
+                        csvRecord.get("forename"),
+                        csvRecord.get("surname"),
+                        csvRecord.get("dob"),
+                        csvRecord.get("nationality"),
+                        csvRecord.get("url"));
+                drivers.add(driver);
+            }
+            return drivers;
         } catch (IOException e){
             throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
         }
