@@ -10,6 +10,20 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Circuit {
+
+    public Circuit(){}
+
+    public Circuit(int circuitId, String circuitRef, String name, String location, String country, String latitude, String longitude, String altitude, String url) {
+        this.circuitId = circuitId;
+        this.circuitRef = circuitRef;
+        this.name = name;
+        this.location = location;
+        this.country = country;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
+        this.url = url;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
@@ -31,16 +45,5 @@ public class Circuit {
     @Column(name = "URL", nullable = false)
     private String url;
 
-    public Circuit(){}
-    public Circuit(int circuitId, String circuitRef, String name, String location, String country, String latitude, String longitude, String altitude, String url) {
-        this.circuitId = circuitId;
-        this.circuitRef = circuitRef;
-        this.name = name;
-        this.location = location;
-        this.country = country;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.altitude = altitude;
-        this.url = url;
-    }
+
 }
