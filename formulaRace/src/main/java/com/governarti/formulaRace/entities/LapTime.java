@@ -15,6 +15,16 @@ public class LapTime {
 
     public LapTime() {}
 
+    public LapTime(int id, int raceId, int driverId, int lap, int position, String time, long milliseconds) {
+        this.id = id;
+        this.raceId = raceId;
+        this.driverId = driverId;
+        this.lap = lap;
+        this.position = position;
+        this.time = time;
+        this.milliseconds = milliseconds;
+    }
+
     public LapTime(int raceId, int driverId, int lap, int position, String time, long miliseconds) {
         this.raceId = raceId;
         this.driverId = driverId;
@@ -26,6 +36,7 @@ public class LapTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Column(name = "RACE_ID", nullable = false)
     private int raceId;
     @Column(name = "DRIVER_ID", nullable = false)

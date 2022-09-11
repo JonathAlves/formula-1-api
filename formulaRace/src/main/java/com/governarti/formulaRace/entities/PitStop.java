@@ -13,6 +13,17 @@ public class PitStop {
 
     public PitStop() {}
 
+    public PitStop(int id, int raceId, int driverId, int stop, int lap, String time, String duration, long milliseconds) {
+        this.id = id;
+        this.raceId = raceId;
+        this.driverId = driverId;
+        this.stop = stop;
+        this.lap = lap;
+        this.time = time;
+        this.duration = duration;
+        this.milliseconds = milliseconds;
+    }
+
     public PitStop(int raceId, int driverId, int stop, int lap, String time, String duration, long milliseconds) {
         this.raceId = raceId;
         this.driverId = driverId;
@@ -25,6 +36,7 @@ public class PitStop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @Column(name = "RACE_ID", nullable = false)
     private int raceId;
     @Column(name = "DRIVER_ID", nullable = false)
