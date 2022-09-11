@@ -22,7 +22,7 @@ public class Constructor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "CONSTRUCTOR_ID", nullable = false)
     private int constructorId;
     @Column(name = "CONSTRUCTOR_REF", nullable = false)
     private String constructorRef;

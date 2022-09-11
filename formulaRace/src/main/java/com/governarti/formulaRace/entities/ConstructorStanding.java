@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class ConstructorStanding {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "CONSTRUCTOR_STANDINGS_ID")
     private int constructorStandingsId;
     @Column(name = "RACE_ID", nullable = false)
     private int raceId;

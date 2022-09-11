@@ -26,7 +26,7 @@ public class Circuit {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "CIRCUIT_ID", nullable = false)
     private int circuitId;
     @Column(name = "CIRCUIT_REF", length = 120, nullable = false)
     private String circuitRef;

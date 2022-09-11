@@ -25,7 +25,7 @@ public class DriverStanding {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @Column(name = "DRIVER_STANDINGS_ID", nullable = false)
     private int driverStandingsId;
     @Column(name = "RACE_ID", nullable = false)
     private int raceId;

@@ -165,4 +165,147 @@ public class CsvHelper {
         }
     }
 
+    public static List<LapTime> csvToLapTime(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/lap_times.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<LapTime> lapTimes = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                LapTime lapTime = new LapTime(
+                        Integer.parseInt(csvRecord.get("raceId")),
+                        Integer.parseInt(csvRecord.get("driverId")),
+                        Integer.parseInt(csvRecord.get("lap")),
+                        Integer.parseInt(csvRecord.get("position")),
+                        csvRecord.get("time"),
+                        Long.parseLong(csvRecord.get("milliseconds")));
+                lapTimes.add(lapTime);
+            }
+            return lapTimes;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public static List<PitStop> csvToPitStop(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/pit_stops.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<PitStop> pitStops = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                PitStop pitStop = new PitStop(
+                        Integer.parseInt(csvRecord.get("raceId")),
+                        Integer.parseInt(csvRecord.get("driverId")),
+                        Integer.parseInt(csvRecord.get("stop")),
+                        Integer.parseInt(csvRecord.get("lap")),
+                        csvRecord.get("time"),
+                        csvRecord.get("duration"),
+                        Long.parseLong(csvRecord.get("milliseconds")));
+                pitStops.add(pitStop);
+            }
+            return pitStops;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public static List<Qualify> csvToQualify(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/qualifying.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<Qualify> qualifies = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                Qualify qualify = new Qualify(
+                        Integer.parseInt(csvRecord.get("qualifyId")),
+                        Integer.parseInt(csvRecord.get("raceId")),
+                        Integer.parseInt(csvRecord.get("driverId")),
+                        Integer.parseInt(csvRecord.get("constructorId")),
+                        csvRecord.get("number"),
+                        Integer.parseInt(csvRecord.get("position")),
+                        csvRecord.get("q1"),
+                        csvRecord.get("q2"),
+                        csvRecord.get("q3"));
+                qualifies.add(qualify);
+            }
+            return qualifies;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public static List<Race> csvToRace(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/races.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<Race> races = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                Race race = new Race(
+                        Integer.parseInt(csvRecord.get("raceId")),
+                        Integer.parseInt(csvRecord.get("year")),
+                        Integer.parseInt(csvRecord.get("round")),
+                        Integer.parseInt(csvRecord.get("circuitId")),
+                        csvRecord.get("name"),
+                        csvRecord.get("date"),
+                        csvRecord.get("time"),
+                        csvRecord.get("url"),
+                        csvRecord.get("fp1_date"),
+                        csvRecord.get("fp1_time"),
+                        csvRecord.get("fp2_date"),
+                        csvRecord.get("fp2_time"),
+                        csvRecord.get("fp3_date"),
+                        csvRecord.get("fp3_time"),
+                        csvRecord.get("quali_date"),
+                        csvRecord.get("quali_time"),
+                        csvRecord.get("sprint_date"),
+                        csvRecord.get("sprint_time"));
+                races.add(race);
+            }
+            return races;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
+    public static List<Result> csvToResult(){
+        try(BufferedReader fileReader = new BufferedReader(new FileReader("src/main/resources/f1db_csv/results.csv"));
+            CSVParser csvParser = new CSVParser(fileReader, CSVFormat.EXCEL.withHeader())){
+            List<Result> results = new ArrayList<>();
+
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+
+            for(CSVRecord csvRecord : csvRecords){
+                Result result = new Result(
+                        Integer.parseInt(csvRecord.get("resultId")),
+                        Integer.parseInt(csvRecord.get("raceId")),
+                        Integer.parseInt(csvRecord.get("driverId")),
+                        Integer.parseInt(csvRecord.get("constructorId")),
+                        csvRecord.get("number"),
+                        Integer.parseInt(csvRecord.get("grid")),
+                        csvRecord.get("position"),
+                        csvRecord.get("positionText"),
+                        csvRecord.get("positionOrder"),
+                        Double.parseDouble(csvRecord.get("points")),
+                        Integer.parseInt(csvRecord.get("laps")),
+                        csvRecord.get("time"),
+                        csvRecord.get("milliseconds"),
+                        csvRecord.get("fastestLap"),
+                        csvRecord.get("rank"),
+                        csvRecord.get("fastestLapTime"),
+                        csvRecord.get("fastestLapSpeed"),
+                        Integer.parseInt(csvRecord.get("statusId")));
+                results.add(result);
+            }
+            return results;
+        } catch (IOException e){
+            throw new RuntimeException("falha ao converter arquivo CSV: " + e.getMessage());
+        }
+    }
+
 }

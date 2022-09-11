@@ -20,6 +20,11 @@ public class ChargeDataBase {
         private List<Constructor> constructors = CsvHelper.csvToConstructor();
         private List<DriverStanding> driverStandings = CsvHelper.csvToDriverStanding();
         private List<Driver> drivers = CsvHelper.csvToDriver();
+        private List<LapTime> lapTimes = CsvHelper.csvToLapTime();
+        private List<PitStop> pitStops = CsvHelper.csvToPitStop();
+        private List<Qualify> qualifies = CsvHelper.csvToQualify();
+        private List<Race> races = CsvHelper.csvToRace();
+        private List<Result> results = CsvHelper.csvToResult();
 
     @Bean
     CommandLineRunner initDataBase(
@@ -28,7 +33,12 @@ public class ChargeDataBase {
             ConstructorStandingRepository constructorStandingRepository,
             ConstructorRepository constructorRepository,
             DriverStandingRepository driverStandingRepository,
-            DriverRepository driverRepository
+            DriverRepository driverRepository,
+            LapTimeRepository lapTimeRepository,
+            PitStopRepository pitStopRepository,
+            QualifyRepository qualifyRepository,
+            RaceRepository raceRepository,
+            ResultRepository resultRepository
             ){
 
         return args -> {
@@ -40,11 +50,15 @@ public class ChargeDataBase {
                 constructorRepository.saveAll(constructors);
                 driverStandingRepository.saveAll(driverStandings);
                 driverRepository.saveAll(drivers);
+                lapTimeRepository.saveAll(lapTimes);
+                pitStopRepository.saveAll(pitStops);
+                qualifyRepository.saveAll(qualifies);
+                raceRepository.saveAll(races);
+                resultRepository.saveAll(results);
                 log.info("Base carregada");
             } catch (Exception e){
-                throw new Exception("Ocorreu um erro ao carregar a base" + e.getMessage());
+                throw new Exception("Ocorreu um erro ao carregar a base: " + e.getMessage());
             }
-
         };
     }
 }
