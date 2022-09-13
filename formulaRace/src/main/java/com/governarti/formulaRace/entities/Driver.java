@@ -46,4 +46,6 @@ public class Driver {
     @Column(name = "URL", nullable = false)
     private String url;
 
+    @Column(name = "WINS", nullable = false)
+    private int wins;
 }

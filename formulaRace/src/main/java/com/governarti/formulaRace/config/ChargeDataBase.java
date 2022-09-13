@@ -28,13 +28,14 @@ public class ChargeDataBase {
         private List<LapTime> lapTimes = CsvHelper.csvToLapTime();
         private List<PitStop> pitStops = CsvHelper.csvToPitStop();
         private List<Qualify> qualifies = CsvHelper.csvToQualify();
-        private List<Race> races = CsvHelper.csvToRace();
-        private List<Result> results = CsvHelper.csvToResult();
+        private List<Race> racesCSV = CsvHelper.csvToRace();
+        private List<Result> resultsCSV = CsvHelper.csvToResult();
         private List<Season> seasons = CsvHelper.csvToSeason();
         private List<SprintResult> sprintResults = CsvHelper.csvToSprintResult();
         private List<Status> statuses = CsvHelper.csvToStatus();
-
-
+        public static List<DriverStanding> driverStandings;
+        public static List<Race> races;
+        public static List<Result> results;
     @Bean
     CommandLineRunner initDataBase(
             CircuitRepository circuitRepository,
@@ -65,11 +66,16 @@ public class ChargeDataBase {
                 lapTimeRepository.saveAll(lapTimes);
                 pitStopRepository.saveAll(pitStops);
                 qualifyRepository.saveAll(qualifies);
-                raceRepository.saveAll(races);
-                resultRepository.saveAll(results);
+                raceRepository.saveAll(racesCSV);
+                resultRepository.saveAll(resultsCSV);
                 seasonRepository.saveAll(seasons);
                 sprintResultRepository.saveAll(sprintResults);
                 statusRepository.saveAll(statuses);
+
+                driverStandings = driverStandingRepository.findAll();
+                races = raceRepository.findAll();
+                results = resultRepository.findAll();
+
                 log.info("Base carregada");
             } catch (Exception e){
                 throw new Exception("Ocorreu um erro ao carregar a base: " + e.getMessage());
