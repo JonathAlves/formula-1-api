@@ -26,17 +26,17 @@ public class DriverService {
         DriverModel driverModel;
 
         for (DriverStanding driverStanding : ChargeDataBase.driverStandings){
-            boolean existeNaLista = false;
+            boolean existsInList = false;
             if(driverStanding.getWins() > 0){
                 driverModel = createDriverModel(getById(driverStanding.getDriverId()), driverStanding);
 
                 for (DriverModel dm : drivers){
                     if(dm.getDriverId() == driverModel.getDriverId()){
-                        existeNaLista = true;
+                        existsInList = true;
                     }
                 }
 
-                if(!existeNaLista){
+                if(!existsInList){
                     drivers.add(driverModel);;
                 }
             }

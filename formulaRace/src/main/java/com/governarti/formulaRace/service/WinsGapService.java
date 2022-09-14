@@ -26,49 +26,69 @@ public class WinsGapService {
 
 
     public WinsGapModel getWinsGap(){
-        List<Result> winners = new ArrayList<>();
+        List<Result> results = new ArrayList<>();
+        List<Driver> winners = new ArrayList<>();
 
         for (Result result : ChargeDataBase.results){
             if(result.getPosition().equals("1")){
-                winners.add(result);
+                if(driverService.getById(result.getDriverId()).isPresent()){
+                    winners.add(driverService.getById(result.getDriverId()).get());
+                }
+                results.add(result);
             }
         }
-        return createWGModel(winners);
+
+        return createWGModel(winners, results);
     }
 
-    public WinsGapModel createWGModel(List<Result> results){
-        WinsGapModel wgModel = new WinsGapModel();
-        List<Integer> years = new ArrayList<>();
+    public WinsGapModel createWGModel(List<Driver> winners, List<Result> results){
+
         List<WinsGapModel> models = new ArrayList<>();
         WinsGapModel maiorGap = null;
+        boolean firstLoop = true;
 
-        for(Result result : results){
-            Driver driver;
-            driver = driverService.getById(result.getDriverId()).get();
+        for(Driver driver : winners){
+            List<Integer> years = new ArrayList<>();
+            WinsGapModel wgModel = new WinsGapModel();
+            boolean existsInList = false;
 
-            wgModel.setDriverId(result.getDriverId());
+            wgModel.setDriverId(driver.getDriverId());
             wgModel.setGivenName(driver.getForename());
             wgModel.setFamilyName(driver.getSurname());
             wgModel.setDateOfBirth(driver.getDob());
             wgModel.setNationality(driver.getNationality());
 
-            years.add(getById(result.getRaceId()).get().getYear());
-
-            wgModel.setLastWin(Collections.max(years));
-            wgModel.setFirstWin(Collections.min(years));
-            wgModel.setGapFromLastWin(wgModel.getLastWin() - wgModel.getFirstWin());
-
-            models.add(wgModel);
-        }
-        System.out.println("TESTE");
-
-        for(WinsGapModel winsGapModel : models){
-            maiorGap = winsGapModel;
-            if(winsGapModel.getGapFromLastWin() > maiorGap.getGapFromLastWin()){
-                maiorGap = winsGapModel;
+            for(Result rs : results){
+                if(rs.getDriverId() == wgModel.getDriverId()){
+                    if(getById(rs.getRaceId()).isPresent()){
+                        years.add(getById(rs.getRaceId()).get().getYear());
+                    }
+                }
             }
-        }
+            wgModel.setFirstWin(Collections.min(years));
+            wgModel.setLastWin(Collections.max(years));
 
+            if(firstLoop){
+                maiorGap = wgModel;
+                firstLoop = false;
+            }
+
+            if((wgModel.getLastWin() - wgModel.getFirstWin()) > (maiorGap.getLastWin() - maiorGap.getFirstWin())){
+                maiorGap = wgModel;
+            }
+
+            for(WinsGapModel model : models){
+                if(wgModel.getDriverId() == model.getDriverId()){
+                    existsInList = true;
+                    break;
+                }
+            }
+
+            if(!existsInList){
+                models.add(wgModel);
+            }
+
+        }
 
         return maiorGap;
     }

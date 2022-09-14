@@ -15,5 +15,4 @@ public class WinsGapModel {
     private String nationality;
     private int firstWin;
     private int lastWin;
-    private int gapFromLastWin;
 }
