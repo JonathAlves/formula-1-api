@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
+
 @RestController
 @RequestMapping("/drivers")
 @RequiredArgsConstructor
@@ -18,7 +20,7 @@ public class WinsGapController {
     private WinsGapService winsGapService;
 
     @GetMapping("/wins-gap")
-    public ResponseEntity<WinsGapModel> getWinsGap(){
+    public ResponseEntity<WinsGapModel> getWinsGap() throws ParseException {
         WinsGapModel wgModel = winsGapService.getWinsGap();
         return ResponseEntity.ok(wgModel);
     }

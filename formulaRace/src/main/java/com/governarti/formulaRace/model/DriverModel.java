@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -12,7 +14,7 @@ public class DriverModel {
     private int driverId;
     private String givenName;
     private String familyName;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String nationality;
     private int wins;
     private String url;

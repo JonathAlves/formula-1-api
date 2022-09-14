@@ -11,6 +11,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,11 +29,11 @@ public class WinsGapService {
     private final DriverService driverService;
 
 
-    public WinsGapModel getWinsGap(){
+    public WinsGapModel getWinsGap() throws ParseException {
         List<Result> results = new ArrayList<>();
         List<Driver> winners = new ArrayList<>();
 
-        for (Result result : ChargeDataBase.results){
+        for (Result result : resultRepository.findAll()){
             if(result.getPosition().equals("1")){
                 if(driverService.getById(result.getDriverId()).isPresent()){
                     winners.add(driverService.getById(result.getDriverId()).get());
@@ -41,11 +45,12 @@ public class WinsGapService {
         return createWGModel(winners, results);
     }
 
-    public WinsGapModel createWGModel(List<Driver> winners, List<Result> results){
+    public WinsGapModel createWGModel(List<Driver> winners, List<Result> results) throws ParseException {
 
         List<WinsGapModel> models = new ArrayList<>();
-        WinsGapModel maiorGap = null;
+        WinsGapModel biggerGap = null;
         boolean firstLoop = true;
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         for(Driver driver : winners){
             List<Integer> years = new ArrayList<>();
@@ -55,7 +60,7 @@ public class WinsGapService {
             wgModel.setDriverId(driver.getDriverId());
             wgModel.setGivenName(driver.getForename());
             wgModel.setFamilyName(driver.getSurname());
-            wgModel.setDateOfBirth(driver.getDob());
+            wgModel.setDateOfBirth(LocalDate.parse(driver.getDob(), format));
             wgModel.setNationality(driver.getNationality());
 
             for(Result rs : results){
@@ -69,12 +74,12 @@ public class WinsGapService {
             wgModel.setLastWin(Collections.max(years));
 
             if(firstLoop){
-                maiorGap = wgModel;
+                biggerGap = wgModel;
                 firstLoop = false;
             }
 
-            if((wgModel.getLastWin() - wgModel.getFirstWin()) > (maiorGap.getLastWin() - maiorGap.getFirstWin())){
-                maiorGap = wgModel;
+            if((wgModel.getLastWin() - wgModel.getFirstWin()) > (biggerGap.getLastWin() - biggerGap.getFirstWin())){
+                biggerGap = wgModel;
             }
 
             for(WinsGapModel model : models){
@@ -90,7 +95,7 @@ public class WinsGapService {
 
         }
 
-        return maiorGap;
+        return biggerGap;
     }
 
     public Optional<Race> getById(int id){

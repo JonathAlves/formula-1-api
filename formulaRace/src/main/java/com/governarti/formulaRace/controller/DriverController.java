@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class DriverController {
     private final DriverService driverService;
 
     @GetMapping("/winning")
-    public ResponseEntity<List<DriverModel>> getByOneWin(){
+    public ResponseEntity<List<DriverModel>> getByOneWin() throws ParseException {
         List list = driverService.getDriversByOneWin();
         return ResponseEntity.ok(list);
     }
