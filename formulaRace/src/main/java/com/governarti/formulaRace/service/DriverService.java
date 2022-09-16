@@ -58,14 +58,15 @@ public class DriverService {
         DriverModel driverModel = new DriverModel();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-
-        driverModel.setDriverId(driver.get().getDriverId());
-        driverModel.setGivenName(driver.get().getForename());
-        driverModel.setFamilyName(driver.get().getSurname());
-        driverModel.setDateOfBirth(LocalDate.parse(driver.get().getDob(), format));
-        driverModel.setNationality(driver.get().getNationality());
-        driverModel.setWins(getWinsDriver(driverStanding.getDriverId()));
-        driverModel.setUrl(driver.get().getUrl());
+        if(driver.isPresent()){
+            driverModel.setDriverId(driver.get().getDriverId());
+            driverModel.setGivenName(driver.get().getForename());
+            driverModel.setFamilyName(driver.get().getSurname());
+            driverModel.setDateOfBirth(LocalDate.parse(driver.get().getDob(), format));
+            driverModel.setNationality(driver.get().getNationality());
+            driverModel.setWins(getWinsDriver(driverStanding.getDriverId()));
+            driverModel.setUrl(driver.get().getUrl());
+        }
 
         return driverModel;
     }

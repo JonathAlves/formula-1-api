@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce66cdd1-b361-49ee-bc1c-345beb0cad14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/controller/DriverMoreTeamsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverMoreTeamsModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverMoreTeamsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6d22a10f-5b1d-4571-903c-6e80b8d2fc13" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/formulaRace/database.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/formulaRace/database.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/formulaRace/database.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/formulaRace/database.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/config/CsvHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/config/CsvHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/controller/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/controller/DriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/controller/WinsGapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/controller/WinsGapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/entities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/entities/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/WinsGapModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/WinsGapModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverMoreTeamsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverMoreTeamsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverMoreTeamsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverMoreTeamsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/WinsGapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/WinsGapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/config/CsvHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/config/CsvHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/controller/DriverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/controller/DriverController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/controller/WinsGapController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/controller/WinsGapController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/entities/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/entities/Driver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/DriverModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/DriverModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/DriverMoreTeamsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/DriverMoreTeamsModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/WinsGapModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/model/WinsGapModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/service/DriverService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/service/DriverService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/service/WinsGapService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/governarti/formulaRace/service/WinsGapService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +31,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -70,7 +64,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2EagRA1OQLQIsXWM1lMRVH2qkmZ" />
+  <component name="ProjectId" id="2ElkuAmHiPzBpHc5SzLcmHPaNoW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -80,6 +74,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -87,23 +82,12 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/formulaRace/formula-1-api/formulaRace/pom.xml&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jonathan.f.alves/Downloads/formulaRace/formula-1-api/formulaRace/pom.xml&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;720a70314213efc2d66b6f2f01b40b48&quot;
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FormulaRaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="formulaRace" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.governarti.formulaRace.FormulaRaceApplication" />
@@ -115,23 +99,26 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce66cdd1-b361-49ee-bc1c-345beb0cad14" name="Changes" comment="" />
-      <created>1662839102564</created>
+      <changelist id="6d22a10f-5b1d-4571-903c-6e80b8d2fc13" name="Changes" comment="" />
+      <created>1663177779621</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1662839102564</updated>
-      <workItem from="1662839103881" duration="9072000" />
-      <workItem from="1662859941553" duration="8695000" />
-      <workItem from="1662909309707" duration="16970000" />
-      <workItem from="1663023041756" duration="15744000" />
-      <workItem from="1663115300598" duration="10964000" />
-      <workItem from="1663163104387" duration="286000" />
-      <workItem from="1663163415557" duration="10351000" />
+      <updated>1663177779621</updated>
+      <workItem from="1663177780822" duration="6834000" />
+      <workItem from="1663290850704" duration="2106000" />
+      <workItem from="1663292986107" duration="5831000" />
+      <workItem from="1663326479527" duration="3460000" />
+      <workItem from="1663333777019" duration="954000" />
+      <workItem from="1663347192665" duration="8890000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -144,23 +131,28 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/config/ChargeDataBase.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverMoreTeamsService.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/model/DriverMoreTeamsModel.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/governarti/formulaRace/service/DriverService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="this" />
-        <watch expression="this" />
-        <watch expression="this" />
-        <watch expression="this" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -10,6 +10,9 @@
         <module name="formulaRace" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="formulaRace" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
