@@ -9,18 +9,18 @@ O consumo da API pode ser feito digitando o endpoint desejado na barra de navega
 
 Nesta API estão disponíveis os seguintes endpoints:
 
----> localhost:8085/drivers/winning
+**---> localhost:8085/drivers/winning**
 
-  Este endpoint irá retornar todos os pilotos que já venceram ao menos uma corrida.
+  * *Este endpoint irá retornar todos os pilotos que já venceram ao menos uma corrida.* *
 
----> localhost:8085/drivers/wins-gap
+**---> localhost:8085/drivers/wins-gap**
 
-  Este endpoint irá retornar o piloto com a maior distância entre sua primeira e última vitória.
+  * *Este endpoint irá retornar o piloto com a maior distância entre sua primeira e última vitória.* *
   
----> localhost:8085/drivers/teams
+**---> localhost:8085/drivers/teams**
 
-  Este endpoint irá retornar os 10 pilotos que pilotaram pelo maior número de equipes, por ordem 
-  decrescente.
+  * *Este endpoint irá retornar os 10 pilotos que pilotaram pelo maior número de equipes, por ordem 
+  decrescente.* *
 
 Estes são os endpoints disponíveis até o momento.
 
